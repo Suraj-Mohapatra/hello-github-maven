@@ -1,0 +1,77 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <mirrors>
+        <mirror>
+            <!-- Mirror for all repositories except the Git Maven repo -->
+            <id>nexus</id>
+            <mirrorOf>*,!git-maven</mirrorOf>
+            <url>https://nexus.example.com:9443/nexus/content/groups/public</url>
+        </mirror>
+    </mirrors>
+
+    <servers>
+        <server>
+            <id>git-maven</id>
+            <configuration>
+                <httpHeaders>
+                    <property>
+                        <name>Private-Token</name>
+                        <value>your-access-token</value>
+                    </property>
+                </httpHeaders>
+            </configuration>
+        </server>
+    </servers>
+
+    <profiles>
+        <profile>
+            <id>my-company</id>
+
+            <repositories>
+
+                <repository>
+                    <id>central</id>
+                    <url>http://central.example.com</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+
+                <repository>
+                    <id>git-maven</id>
+                    <url>https://git.example.com/api/maven</url>
+                </repository>
+                
+            </repositories>
+
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>central</id>
+                    <url>http://central.example.com</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </pluginRepository>
+            </pluginRepositories>
+
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>my-company</activeProfile>
+    </activeProfiles>
+
+</settings>
