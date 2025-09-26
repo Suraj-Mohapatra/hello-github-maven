@@ -11,4 +11,6 @@ a settings_example.xml is given for your reference.
 
 also you can configure nexus or artifactory as a mirror to maven central. unused settings are commented out in settings_examole.xml.  
 
-note** process is same for all JVM langauges as this is maven specific.
+note** process is same for all JVM langauges as this is maven specific.  
+
+note** use the GitHub Actions workflow 'Publish Java Package with Maven' to automatically build and publish a project to GitHub Packages whenever you create a release. For this I have created another project, url : 
