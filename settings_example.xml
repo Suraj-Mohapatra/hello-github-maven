@@ -1,58 +1,82 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
-                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <!-- Where Maven keeps your downloaded dependencies -->
+    <!-- <localRepository>${user.home}/.m2/repository</localRepository> -->
 
     <mirrors>
+
+        <!-- Default to Maven Central -->
         <mirror>
-            <!-- Mirror for all repositories except the Git Maven repo -->
+            <id>central</id>
+            <mirrorOf>central</mirrorOf>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </mirror>
+
+        <!-- Mirror for all repositories except the Git Maven repo -->
+        <!-- <mirror>
             <id>nexus</id>
             <mirrorOf>*,!git-maven</mirrorOf>
             <url>https://nexus.example.com:9443/nexus/content/groups/public</url>
-        </mirror>
+        </mirror> -->
+
     </mirrors>
 
     <servers>
+
+        <!-- GitHub Packages authentication -->
         <server>
-            <id>git-maven</id>
+            <id>github</id>
+            <username>username</username>
+            <password>token</password>
+        </server>
+
+        <!-- <server>
+            <id>gitlab</id>
             <configuration>
                 <httpHeaders>
                     <property>
-                        <name>Private-Token</name>
-                        <value>your-access-token</value>
+                        <name>Token-Name</name>
+                        <value>my-access-token</value>
                     </property>
                 </httpHeaders>
             </configuration>
-        </server>
+        </server> -->
+
     </servers>
 
     <profiles>
         <profile>
-            <id>my-company</id>
-
+            <id>github</id>
             <repositories>
 
                 <repository>
                     <id>central</id>
-                    <url>http://central.example.com</url>
-                    <releases>
+                    <url>https://repo.maven.apache.org/maven2</url>
+                    <!-- <releases>
                         <enabled>true</enabled>
                         <updatePolicy>always</updatePolicy>
                     </releases>
                     <snapshots>
                         <enabled>true</enabled>
                         <updatePolicy>always</updatePolicy>
-                    </snapshots>
+                    </snapshots> -->
                 </repository>
 
                 <repository>
-                    <id>git-maven</id>
-                    <url>https://git.example.com/api/maven</url>
+                    <id>github</id>
+                    <url>https://maven.pkg.github.com/my/repo</url>
                 </repository>
-                
+
+                <!-- <repository>
+                    <id>gitlab</id>
+                    <url>https://my/gitab/url/repo</url>
+                </repository> -->
+
             </repositories>
 
-            <pluginRepositories>
+            <!-- <pluginRepositories>
                 <pluginRepository>
                     <id>central</id>
                     <url>http://central.example.com</url>
@@ -65,13 +89,12 @@
                         <updatePolicy>always</updatePolicy>
                     </snapshots>
                 </pluginRepository>
-            </pluginRepositories>
-
+            </pluginRepositories> -->
         </profile>
     </profiles>
 
     <activeProfiles>
-        <activeProfile>my-company</activeProfile>
+        <activeProfile>github</activeProfile>
     </activeProfiles>
 
 </settings>
