@@ -17,7 +17,7 @@
         <!-- Mirror for all repositories except the Git Maven repo -->
         <!-- <mirror>
             <id>nexus</id>
-            <mirrorOf>*,!git-maven</mirrorOf>
+            <mirrorOf>*,!gitlab</mirrorOf>
             <url>https://nexus.example.com:9443/nexus/content/groups/public</url>
         </mirror> -->
 
