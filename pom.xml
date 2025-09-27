@@ -39,7 +39,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/Suraj-Mohapatra/hello-github-maven</url>
+            <url>https://maven.pkg.github.com/suraj-mohapatra/hello-github-maven</url>
         </repository>
     </distributionManagement>
 
