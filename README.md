@@ -15,4 +15,22 @@ note** process is same for all JVM langauges as this is maven specific.
 
 note** you may also use the GitHub Actions workflow 'Publish Java Package with Maven' to automatically build and publish a project to GitHub Packages whenever you create a release. For this I have created another project, url : https://github.com/Suraj-Mohapatra/maven-github-workflows  
 
+```
+    <dependencies>
+        <dependency>
+            <groupId>com.uglyeagle</groupId>
+            <artifactId>hello-github-maven</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+    </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>github</id>
+            <url>https://maven.pkg.github.com/Suraj-Mohapatra/hello-github-maven</url>
+        </repository>
+    </repositories>
+
+```
+
 I may add remaining information whenever I feel like it; meanwhile, do some homework contribute more than complain.
