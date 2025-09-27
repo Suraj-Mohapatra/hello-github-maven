@@ -21,7 +21,7 @@ a settings_example.xml is given for your reference. add this to your pom.xml
     <repositories>
         <repository>
             <id>github</id>
-            <url>https://maven.pkg.github.com/Suraj-Mohapatra/hello-github-maven</url>
+            <url>https://maven.pkg.github.com/suraj-mohapatra/hello-github-maven</url>
         </repository>
     </repositories>
 ```
@@ -30,6 +30,6 @@ also you can configure nexus or artifactory as a mirror to maven central. unused
 
 note** process is same for all JVM langauges as this is maven specific.  
 
-note** you may also use the GitHub Actions workflow 'Publish Java Package with Maven' to automatically build and publish a project to GitHub Packages whenever you create a release. For this I have created another project, url : https://github.com/Suraj-Mohapatra/maven-github-workflows  
+note** you may also use the GitHub Actions workflow 'Publish Java Package with Maven' to automatically build and publish a project to GitHub Packages whenever you create a release. For this I have created another project, url : https://github.com/suraj-mohapatra/maven-github-workflows  
 
 I may add remaining information whenever I feel like it; meanwhile, do some homework contribute more than complain.
