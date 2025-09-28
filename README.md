@@ -7,7 +7,9 @@ WjJod1h6QkJlRTFtZGpsd1ZGWldTSGRQTm10aGVUUlVNVlJ6Tm5kTGIzSTVkak40VEc5dWRRPT0=
 mvn deploy : to publish your artifact  
 
 to consume the artifact, add a settings.xml to your maven local directory(.m2) inside your ${user.home}.  
-a settings_example.xml is given for your reference. add this to your pom.xml  
+a settings_example.xml is given for your reference.  
+
+add this to your pom.xml  
 
 ```
     <dependencies>
